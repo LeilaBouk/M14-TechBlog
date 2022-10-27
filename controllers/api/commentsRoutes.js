@@ -3,7 +3,7 @@ const { Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Make Comments
-router.Comments('/', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newComments = await Comments.create({
       ...req.body,

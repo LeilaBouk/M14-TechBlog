@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Posts } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Make post
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newPost = await Post.create({
+    const newPosts = await Posts.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -19,19 +19,19 @@ router.post('/', withAuth, async (req, res) => {
 // Delete post
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const PostData = await Post.destroy({
+    const PostsData = await Posts.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!PostData) {
-      res.status(404).json({ message: 'No Post found with this id!' });
+    if (!PostsData) {
+      res.status(404).json({ message: 'No Posts found with this id!' });
       return;
     }
 
-    res.status(200).json(PostData);
+    res.status(200).json(PostsData);
   } catch (err) {
     res.status(500).json(err);
   }

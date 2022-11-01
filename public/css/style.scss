@@ -1,5 +1,55 @@
 * {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// HEADER STYLES
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.title {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.navItems {
+  list-style: none;
+  cursor: pointer;
+
+  li {
+      display: inline-block;
+      padding: 0px 20px;
   }
+}
+
+// LOGIN PAGE STYLES
+
+.loginContainer {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 40px;
+}
+
+.signupForm {
+  align-items: right;
+  padding: 20px;
+}
+
+.loginForm {
+  align-items: left;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
+

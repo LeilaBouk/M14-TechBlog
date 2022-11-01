@@ -3,28 +3,29 @@ const { Posts, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  try {
-    // Get all Postss and JOIN with user data
-    const PostsData = await Posts.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+//   try {
+//     // Get all Postss and JOIN with user data
+//     const PostsData = await Posts.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
-    // Serialize data so the template can read it
-    const Posts = PostsData.map((Posts) => Posts.get({ plain: true }));
+//     // Serialize data so the template can read it
+//     const Posts = PostsData.map((Posts) => Posts.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      Posts, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+//     // Pass serialized data and session flag into template
+//     res.render('homepage', { 
+//       Posts, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+res.render('homepage');
 });
 
 router.get('/Posts/:id', async (req, res) => {

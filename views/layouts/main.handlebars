@@ -11,32 +11,20 @@
 <body>
 
     <header>
-        <h1 class="title">Bistro Board</h1>
+        <h1 class="title">  <a href="/">Bistro Board</a></h1>
         <nav>
             <ul class="navItems">
-                <li>HOME</li>
-                <li>NEW POST</li>
-                <li>LOGIN</li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/post">NEW POST</a></li>
+                 {{#if logged_in}}
+                <li><a href="/login">LOGOUT</a></li>
+                {{else}}
+                 <li><a href="/login">LOGIN</a></li>
+               {{/if}}
             </ul>
         </nav>
     </header>
 
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -44,7 +32,6 @@
     <footer>
       
     </footer>
-  </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}

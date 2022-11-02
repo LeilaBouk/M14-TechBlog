@@ -52,4 +52,45 @@ input {
   margin: 10px;
 }
 
+// HOME PAGE
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+.card {
+  transition: 0.3s;
+  max-width: 40vh;
+  margin: 20px;
+  border-style: solid;
+  border-color: #b1b1b1;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(7, 32, 73, 0.577);
+  max-width: 42vh;
+  cursor: pointer;
+}
+
+.container {
+  padding: 2px 16px;
+
+  h4 {
+      font-size: 23px;
+      text-align: center;
+    }
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.avatar {
+  width: 100%;
+}
+
 

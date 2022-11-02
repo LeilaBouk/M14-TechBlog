@@ -1,24 +1,32 @@
-<!-- Loop over each object in the posts array -->
-{{#each posts as |posts| }}
-<div class="row mb-4 posts">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/posts/{{posts.id}}">{{posts.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount posts.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{posts.user.name}} on {{format_date posts.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{posts.description}}
-    </p>
-  </div>
+ <div class="row">
+
+    <div class="card" id="manager">
+        <img src="./assets/food.jpeg" class="avatar">
+        <div class="container">
+          <h4><b>Red Lion</b></h4>
+          <p class="title"> Username </p>
+          <p>Post Preview</p>
+        </div>
+      </div>
+
+      <div class="card" id="manager">
+        <img src="./assets/food.jpeg" class="avatar">
+        <div class="container">
+          <h4><b>Red Lion</b></h4>
+          <p class="title"> Username </p>
+          <p>Post Preview</p>
+        </div>
+      </div>
+
+      <div class="card" id="manager">
+        <img src="./assets/food.jpeg" class="avatar">
+        <div class="container">
+          <h4><b>Red Lion</b></h4>
+          <p class="title"> Username </p>
+          <p>Post Preview</p>
+        </div>
+      </div>
+
+
+      <!-- Row End -->
 </div>
-{{/each}}

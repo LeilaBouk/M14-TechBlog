@@ -1,4 +1,7 @@
 # M14-TechBlog
+## Website screenshot 📸
+
+![Website screenshot](./public/assets/demo.png)
 ## About this project 🐊
 
 This project was created as a chat board for bistro owners. 
